@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
+:root{
+    --yellow: #eef120;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/*
+applies styles to
+(such as clicking and dragging the mouse across text).
+*/
+*::selection{
+    background:#333;
+    color:var(--yellow);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 200rem;
+}
+
+html::-webkit-scrollbar{
+    width:1.3rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#333;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--yellow);
+}
+
+header{
+    width:100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+    
+}
+#search-box{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    background: var(--yellow);
+    align-items: center;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+}
+#search-box.active{
+    transform:scaleY(1);
+    opacity: 1;
+}
+#search-box #search{
+    width:100%;
+    padding: 1rem;
+    text-transform: none;
+    font-size: 2rem;
+}
+#search-box #search::placeholder{
+    text-transform: capitalize;
+}
+
+#search-box label{
+    font-size: 3rem;
+    color:#333;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: #333;
+}
+
+header .logo i{
+    transform: rotate(-65deg);
+    color: var(--yellow);
+}
+
+header .navbar a{
+    color:#333;
+    font-size: 2rem;
+    padding:0 1rem;
+}
+header .navbar a:hover{
+    color: var(--yellow);
+}
+
+header .icons i,header .icons a{
+    color:#333;
+    padding-left: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+header .icons i:hover,header .icons a:hover{
+    color:var(--yellow);
+}
+
+.fa-times{
+    transform:rotate(-360deg);
+}
