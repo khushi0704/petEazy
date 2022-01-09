@@ -53,6 +53,8 @@ header{
     position: relative;
     
 }
+
+
 #search-box{
     position: absolute;
     top: 100%;
@@ -120,4 +122,113 @@ header .icons i:hover,header .icons a:hover{
 
 .fa-times{
     transform:rotate(-360deg);
+}
+
+#menu{
+    cursor: pointer;
+    color: #333;
+    font-size: 3rem;
+    display: none;
+}
+
+body{
+    height: 300rem;
+}
+
+header.sticky{
+    position: fixed;
+    top:0;
+    left:0;
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    z-index: 1000;
+}
+
+section {
+    padding: 1rem 5%;
+}
+
+.home{
+    min-height: 70vh;
+    background: url(../images/home-bg.webp) no repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.home .content span{
+    color:#333;
+    font-size: 2rem;
+}
+.home .content h3{
+    color:#333;
+    font-size: 5.5rem;
+}
+
+.home .content .btn{
+    background: #fff;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:  .7rem 2.5rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    background: #333;
+    color: var(--yellow);
+    position: relative;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    overflow:hidden;
+    z-index: 0;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0,100% 0, 10% 25%, 0 100%);
+    background: #444;
+    z-index: -1;
+}
+
+/* media queries */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        background: white;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        z-index: 1000;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    header .navbar a{
+        font-size: 2rem;
+        padding: 1.5rem;
+        display: block;
+    }
+
+    header .navbar.nav-toggle{
+        transform:scaleY(1);
+        opacity: 1;
+    }
+
 }
